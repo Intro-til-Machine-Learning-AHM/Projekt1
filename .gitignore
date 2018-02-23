@@ -2,5 +2,8 @@
 *.out
 *.log
 *.pdf
+*.fdb_latexmk
+*.fls
+*.xdv
 .Rhistory
 python-venv/
