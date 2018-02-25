@@ -14,16 +14,16 @@ from data_import import data
 # Load data
 df=pd.read_csv('diadata.csv', sep=',',header=None)
 df.values
-# Assign mean values
-#print(np.mean(data['pregs']))
-#print(np.mean(data['glucose']))
-#print(np.mean(data['bp']))
-#print(np.mean(data['thickness']))
-#print(np.mean(data['insulin']))
-#print(np.mean(data['bmi']))
-#print(np.mean(data['dia_pedig']))
-#print(np.mean(data['age']))
-# Assign variance
+ #Assign mean values
+print(np.var(data['pregs']))
+print(np.var(data['glucose']))
+print(np.var(data['bp']))
+print(np.var(data['thickness']))
+print(np.var(data['insulin']))
+print(np.var(data['bmi']))
+print(np.var(data['dia_pedig']))
+print(np.var(data['age']))
+ #Assign variance
 np.var(data['pregs'])
 np.var(data['glucose'])
 np.var(data['bp'])
@@ -34,8 +34,8 @@ np.var(data['dia_pedig'])
 np.var(data['age'])
 # Assign covariance
 Covariance=data.corr().round(2)
-print(Covariance)
-print(type(Covariance))
-print(Covariance.to_latex())
+#print(Covariance)
+#print(type(Covariance))
+#print(Covariance.to_latex())
 # Basic summary statistics
-#print(data.describe
+#print(data.mean())

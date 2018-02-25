@@ -39,18 +39,8 @@ Noget mere tekst
 
 
 \subsection{Attributes of the data}
-This dataset contains 8 attributes which work as input. These attributes are defined as follows
-[Smith et al., 1988]
-\begin{enumerate}
-\item Number of times pregnant
-\item Plasma glucose concentration
-\item Diastolic blood pressure
-\item Triceps skin fold thickness
-\item 2-Hour serum insulin
-\item Body Mass Index (BMI)
-\item Diabetes pedigree function
-\item Age
-\end{enumerate}
+This dataset contains 8 attributes which work as input. These attributes are defined in
+the above section and is discusses more in depth in the following.
 
 The number of times pregnant is a discrete ratio attribute and so is
 the age attribute. Both attributes are measured in a finite set of values.
@@ -83,6 +73,12 @@ considerable amount of the original observations have been discarded, as the
 data set went from 768 observations to 532.
 \bigskip
 
+Some summary statistics have been summarized in the tables below. This should
+give some insigt to the values usually seen in the attributes. Mean, variance
+and correalation have been presented for the attributes. Here, the huge differences
+in the variance of the attributes should be noted. Some are very high, some are
+almost non-existent.
+
 \begin{table}[]
 \centering
 \caption{Mean and median of attributes}
@@ -90,8 +86,8 @@ data set went from 768 observations to 532.
 \begin{tabular}{lllllllll}
 \cline{1-1}
 \multicolumn{1}{|l|}{Attribute} & pregs & glucose & bp   & thickness & insulin & bmi  & dia\_pedig & age  \\ \cline{1-1}
-\multicolumn{1}{|l|}{Mean}      & 3.5   & 121.0   & 71.5 & 29.2      & 115.0   & 32.9 & 0.5        & 31.6 \\ \cline{1-1}
-\multicolumn{1}{|l|}{Median}    & 2     & 115     & 72   & 29        & 91.5    & 32.8 & 0.42       & 28.0 \\ \cline{1-1}
+\multicolumn{1}{|l|}{Mean}      & 3.3   & 122.6   & 70.7 & 29.1      & 156.1   & 33.0 & 0.5        & 30.9 \\ \cline{1-1}
+\multicolumn{1}{|l|}{Variance}  & 10.3     & 950.0     & 155.8   & 110.3        & 14087.3    & 49.3 & 0.1       & 103.8 \\ \cline{1-1}
                                                        &       &         &      &           &         &      &            &      \\ \hline
 \end{tabular}
 \end{table}
@@ -102,15 +98,15 @@ data set went from 768 observations to 532.
 \toprule
 {} &  pregs &  glucose &    bp &  thickness &  insulin &   bmi &  dia\_pedig &   age &  class \\
 \midrule
-pregs     &   1.00 &     0.13 &  0.20 &       0.10 &    -0.01 &  0.01 &       0.01 &  0.64 &   0.25 \\
-glucose   &   0.13 &     1.00 &  0.22 &       0.23 &     0.46 &  0.25 &       0.17 &  0.28 &   0.50 \\
-bp        &   0.20 &     0.22 &  1.00 &       0.23 &     0.01 &  0.31 &       0.01 &  0.35 &   0.18 \\
-thickness &   0.10 &     0.23 &  0.23 &       1.00 &     0.13 &  0.65 &       0.12 &  0.16 &   0.25 \\
-insulin   &  -0.01 &     0.46 &  0.01 &       0.13 &     1.00 &  0.19 &       0.15 &  0.08 &   0.21 \\
-bmi       &   0.01 &     0.25 &  0.31 &       0.65 &     0.19 &  1.00 &       0.15 &  0.07 &   0.30 \\
-dia\_pedig &   0.01 &     0.17 &  0.01 &       0.12 &     0.15 &  0.15 &       1.00 &  0.07 &   0.23 \\
-age       &   0.64 &     0.28 &  0.35 &       0.16 &     0.08 &  0.07 &       0.07 &  1.00 &   0.32 \\
-class     &   0.25 &     0.50 &  0.18 &       0.25 &     0.21 &  0.30 &       0.23 &  0.32 &   1.00 \\
+pregs     &   1.00 &     0.20 &  0.21 &       0.09 &     0.08 & -0.03 &       0.01 &  0.68 &   0.26 \\
+glucose   &   0.20 &     1.00 &  0.21 &       0.20 &     0.58 &  0.21 &       0.14 &  0.34 &   0.52 \\
+bp        &   0.21 &     0.21 &  1.00 &       0.23 &     0.10 &  0.30 &      -0.02 &  0.30 &   0.19 \\
+thickness &   0.09 &     0.20 &  0.23 &       1.00 &     0.18 &  0.66 &       0.16 &  0.17 &   0.26 \\
+insulin   &   0.08 &     0.58 &  0.10 &       0.18 &     1.00 &  0.23 &       0.14 &  0.22 &   0.30 \\
+bmi       &  -0.03 &     0.21 &  0.30 &       0.66 &     0.23 &  1.00 &       0.16 &  0.07 &   0.27 \\
+dia\_pedig &   0.01 &     0.14 & -0.02 &       0.16 &     0.14 &  0.16 &       1.00 &  0.09 &   0.21 \\
+age       &   0.68 &     0.34 &  0.30 &       0.17 &     0.22 &  0.07 &       0.09 &  1.00 &   0.35 \\
+class     &   0.26 &     0.52 &  0.19 &       0.26 &     0.30 &  0.27 &       0.21 &  0.35 &   1.00 \\
 \bottomrule
 \end{tabular}
 \end{table}
