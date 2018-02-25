@@ -9,6 +9,37 @@ Her er noget tekst under overskrift 1.
 Noget tekst
 
 Noget mere tekst
-''
-\subsection{Underoverskrift 2}
-Wadduå skriver lige noget om vores data la di la di
+
+
+\subsection{Attributes of the data}
+This dataset contains 8 attributes which work as input. These attributes are defined as follows
+[Smith et al., 1988]
+\begin{enumerate}
+\item Number of times pregnant
+\item Plasma glucose concentration
+\item Diastolic blood pressure
+\item Triceps skin fold thickness
+\item 2-Hour serum insulin
+\item Body Mass Index (BMI)
+\item Diabetes pedigree function
+\item Age
+\end{enumerate}
+
+The number of times pregnant is a discrete ratio attribute and so is
+the age attribute. Both attributes are measured in a finite set of values.
+Plasma glucose concentration is a continuous ratio attribute
+and so is diastolic blood pressure, skin fold thickness, BMI and 2-hour serum
+insulin. This means that only one of the eight input attributes is non-ratio.
+The diabetes pedigree function is a continous ordinal attribute, because these
+numbers tell whether one is more or less genetically expected to be diagnosed
+with diabetes.
+\bigskip
+
+Some of the recorded data make no biological sense and observations with one or
+more nonsense values in its attributes have been discarded from the dataset.
+Common sense has been applied to filter out obviously foul observations, such
+as entries that dictate concentrations of blood plasma glucose to be zero, blood
+pressure of zero, skin fold thickness as zero and BMI of zero. This means a
+considerable amount of the original observations have been discarded, as the
+data set went from 768 observations to 532.
+\bigskip
