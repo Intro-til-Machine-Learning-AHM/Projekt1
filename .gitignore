@@ -7,6 +7,7 @@
 *.xdv
 .Rhistory
 python-venv/
+__pycache__/
 
 load_toolbox.sh
 shell.nix
