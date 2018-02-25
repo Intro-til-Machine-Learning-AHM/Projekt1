@@ -15,14 +15,14 @@ from data_import import data
 df=pd.read_csv('diadata.csv', sep=',',header=None)
 df.values
 # Assign mean values
-print(np.mean(data['pregs']))
-print(np.mean(data['glucose']))
-print(np.mean(data['bp']))
-print(np.mean(data['thickness']))
-print(np.mean(data['insulin']))
-print(np.mean(data['bmi']))
-print(np.mean(data['dia_pedig']))
-print(np.mean(data['age']))
+#print(np.mean(data['pregs']))
+#print(np.mean(data['glucose']))
+#print(np.mean(data['bp']))
+#print(np.mean(data['thickness']))
+#print(np.mean(data['insulin']))
+#print(np.mean(data['bmi']))
+#print(np.mean(data['dia_pedig']))
+#print(np.mean(data['age']))
 # Assign variance
 np.var(data['pregs'])
 np.var(data['glucose'])
@@ -33,7 +33,9 @@ np.var(data['bmi'])
 np.var(data['dia_pedig'])
 np.var(data['age'])
 # Assign covariance
-covmatrix=np.cov(data)
+Covariance=data.corr().round(2)
+print(Covariance)
+print(type(Covariance))
+print(Covariance.to_latex())
 # Basic summary statistics
-#print(data.describe())
-print(covmatrix[0])
+#print(data.describe

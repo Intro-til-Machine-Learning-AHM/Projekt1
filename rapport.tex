@@ -85,7 +85,7 @@ data set went from 768 observations to 532.
 
 \begin{table}[]
 \centering
-\caption{My caption}
+\caption{Mean and median of attributes}
 \label{my-label}
 \begin{tabular}{lllllllll}
 \cline{1-1}
@@ -95,3 +95,20 @@ data set went from 768 observations to 532.
                                                        &       &         &      &           &         &      &            &      \\ \hline
 \end{tabular}
 \end{table}
+
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\caption{Correalation matrix}
+{} &  pregs &  glucose &    bp &  thickness &  insulin &   bmi &  dia\_pedig &   age &  class \\
+\midrule
+pregs     &   1.00 &     0.13 &  0.20 &       0.10 &    -0.01 &  0.01 &       0.01 &  0.64 &   0.25 \\
+glucose   &   0.13 &     1.00 &  0.22 &       0.23 &     0.46 &  0.25 &       0.17 &  0.28 &   0.50 \\
+bp        &   0.20 &     0.22 &  1.00 &       0.23 &     0.01 &  0.31 &       0.01 &  0.35 &   0.18 \\
+thickness &   0.10 &     0.23 &  0.23 &       1.00 &     0.13 &  0.65 &       0.12 &  0.16 &   0.25 \\
+insulin   &  -0.01 &     0.46 &  0.01 &       0.13 &     1.00 &  0.19 &       0.15 &  0.08 &   0.21 \\
+bmi       &   0.01 &     0.25 &  0.31 &       0.65 &     0.19 &  1.00 &       0.15 &  0.07 &   0.30 \\
+dia\_pedig &   0.01 &     0.17 &  0.01 &       0.12 &     0.15 &  0.15 &       1.00 &  0.07 &   0.23 \\
+age       &   0.64 &     0.28 &  0.35 &       0.16 &     0.08 &  0.07 &       0.07 &  1.00 &   0.32 \\
+class     &   0.25 &     0.50 &  0.18 &       0.25 &     0.21 &  0.30 &       0.23 &  0.32 &   1.00 \\
+\bottomrule
+\end{tabular}
