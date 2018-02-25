@@ -2,9 +2,9 @@ import numpy as np
 from data_import import data as data_cleaned
 
 import matplotlib as mpl
-mpl.use("Qt4Agg")
+#mpl.use("Qt4Agg")
 import matplotlib.pyplot as plt
-plt.ion()
+#plt.ion()
 
 # Delete class variables
 class_var = data_cleaned["class"]
