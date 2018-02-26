@@ -29,9 +29,23 @@ The dataset is composed by the following attributes:
 The dataset was found on the website: (http://archive.ics.uci.edu/ml/datasets/Pima%20Indians%20Diabetes)
 In the folder "Data Folder".
 
-We want to determine whether or not the Indian women have diabetes or not, by using binary classification.
-Because the outcome will be if they either have diabetes or if they do not.
+The obvious variable to predict
+in any sort of supervised learning scenario
+is the class attribute,
+as it distinguishes between
+those patients with diabetes and those without.
+A classification would be the simplest,
+and easy for an end user,
+but with a regression
+we can include our confidence in the diagnosis
+despite the class variable being discrete.
 
+As the data contains a multitude of missing values,
+an important first step would be to clean it up.
+A ``safe'' way to do so would be to simply remove any data points
+with missing values,
+assuming that there is no systematic bias
+which would cause missing values for certain patients.
 
 \subsection{2. A detailed explanation of the attributes of the data.}
 
