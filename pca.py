@@ -16,6 +16,8 @@ u, s, vh = np.linalg.svd(data_centered)
 v = vh.T
 
 plt.bar(np.arange(0,len(s)),(s*s)/np.sum(s*s))
+plt.ylabel('Explained variance')
+plt.xlabel('Principal components')
 plt.show()
 plt.plot(np.arange(0,len(s)),np.cumsum(s*s)/np.sum(s*s),'o-')
 plt.show()
@@ -32,6 +34,8 @@ u_n, s_n, vh_n = np.linalg.svd(data_normalized)
 v_n = vh_n.T
 
 plt.bar(np.arange(0,len(s_n)),(s_n**2)/np.sum(s_n**2))
+plt.ylabel('Explained variance')
+plt.xlabel('Principal components')
 plt.show()
 plt.plot(np.arange(0,len(s)),np.cumsum(s_n**2)/np.sum(s_n**2),'o-')
 plt.show()

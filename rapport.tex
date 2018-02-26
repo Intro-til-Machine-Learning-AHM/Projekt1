@@ -110,3 +110,21 @@ class     &   0.26 &     0.52 &  0.19 &       0.26 &     0.30 &  0.27 &       0.
 \bottomrule
 \end{tabular}
 \end{table}
+
+\subsection{Data Visualization}
+
+The PCA revealed that a lot of the variance in the data is described by the
+first principal component, the insulin. This principal component accounts for
+93% of the variance, and together with the second principal component, 97% of
+the variance in the data is explained. This means a lot of the variance can
+be described in a 2D-plot. A cumulative sum can be seen on figure (??) as a
+function of principal components, from principal component describing the most
+variance to the principal component describing the least variance.
+
+When the data is not standardized, one of the principal components and the one
+with the most responsibility for the variance in the dataset is insulin. Therefore,
+this is more or less the first principal direction in which we plot our data. The second
+principal direction is much dictated by the attribute glucose, which is the
+attribute with the second highest variance. In this way, the projected plot in
+2D can more or less be though of as projection of the data down to the plane
+in the insulin and glucose directions.
