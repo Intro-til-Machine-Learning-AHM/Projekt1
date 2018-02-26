@@ -68,9 +68,9 @@ Some of the recorded data make no biological sense and observations with one or
 more nonsense values in its attributes have been discarded from the dataset.
 Common sense has been applied to filter out obviously foul observations, such
 as entries that dictate concentrations of blood plasma glucose to be zero, blood
-pressure of zero, skin fold thickness as zero and BMI of zero. This means a
+pressure of zero, skin fold thickness as zero or BMI of zero. This means a
 considerable amount of the original observations have been discarded, as the
-data set went from 768 observations to 532.
+data set went from 768 observations to 392.
 \bigskip
 
 Some summary statistics have been summarized in the tables below. This should
@@ -119,12 +119,24 @@ first principal component, the insulin. This principal component accounts for
 the variance in the data is explained. This means a lot of the variance can
 be described in a 2D-plot. A cumulative sum can be seen on figure (??) as a
 function of principal components, from principal component describing the most
-variance to the principal component describing the least variance.
+variance to the principal component describing the least variance. This is true
+when the data is not standardized. However, after standardization, the variance
+cannot be explained by one or two principle components, and therefore visualization
+in 2D or even 3D becomes hard without loss of information about the data. See figure
+(??) for an overview of the explained variance for each principal component.
 
-When the data is not standardized, one of the principal components and the one
+When the data is not standardized, the principal component
 with the most responsibility for the variance in the dataset is insulin. Therefore,
 this is more or less the first principal direction in which we plot our data. The second
 principal direction is much dictated by the attribute glucose, which is the
 attribute with the second highest variance. In this way, the projected plot in
-2D can more or less be though of as projection of the data down to the plane
-in the insulin and glucose directions.
+2D can more or less be thought of as projection of the data down to the plane
+in the insulin and glucose directions. Figure (??) shows in which direction
+the principal components point. The "spikes" in each graph show how the principal
+directions point mostly in the direction of insulin and glucose, respectively.
+After standardization, the principal directions align much less with any principal
+components, which does make sense considering how the variance had to be presented
+by more principal components after standardization. This is visualized in figure
+(??).
+
+Here, the data can be seen projected to the principal components.
