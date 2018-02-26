@@ -10,6 +10,7 @@ import sys
 import os
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from data_import import data
 # Load data
 df=pd.read_csv('diadata.csv', sep=',',header=None)
@@ -39,3 +40,8 @@ Covariance=data.corr().round(2)
 #print(Covariance.to_latex())
 # Basic summary statistics
 #print(data.mean())
+
+# Boxplots code
+data_copy = data.copy()
+del data_copy["class"]
+plt.boxplot(data_copy.as_matrix())
