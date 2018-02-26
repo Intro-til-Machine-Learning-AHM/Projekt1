@@ -21,7 +21,7 @@ The dataset is composed by the following attributes:
 \item Diabetes pedigree function
 \item Age Years
 
-\item  \emph{class attribute}:
+\item \emph{class attribute}:
 \item Class variable 0 or 1
 \end{enumerate}
 
@@ -102,7 +102,7 @@ data set went from 768 observations to 392.
 \bigskip
 
 Some summary statistics have been summarized in the tables below. This should
-give some insigt to the values usually seen in the attributes. Mean, variance
+give some insight to the values usually seen in the attributes. Mean, variance
 and correalation have been presented for the attributes. Here, the huge differences
 in the variance of the attributes should be noted. Some are very high, some are
 almost non-existent.
@@ -140,6 +140,17 @@ class     &   0.26 &     0.52 &  0.19 &       0.26 &     0.30 &  0.27 &       0.
 \end{table}
 
 \subsection{Data Visualization}
+
+We made a boxplot analysis, figure(???), and it showed clearly that attribute 5(insulin) had the most outliers
+and had the greatest variance. Attribute 2(glucose) had the second greatest variance but had no outliers.
+All though the plots showed a lot of outliers for the attribute insulin, we did not remove them because we
+assume that the examination was performed and measured correctly.
+All of the attributes have the same y-axes. This detail is important because each attribute describes a
+biological factor, which vary greatly in value.
+For attribute 1(pregs) there is not a high variance. This could be because of the Indian women not having
+a great amount of children, which is normal.
+
+
 
 The PCA revealed that a lot of the variance in the data is described by the
 first principal component, the insulin. This principal component accounts for
@@ -182,4 +193,4 @@ The primary modelling aim, to predict whether an Indian woman had diabetes or no
 based on 8 variables, appears to be feasible. However, given the nature of the
 data, PCA will most likely not give a complete picture between these variables
 and the occurrence of diabetes. After inspecting the boxplots above, it is
-very likely that insulin will dominate. 
+very likely that insulin will dominate.
