@@ -39,3 +39,7 @@ Covariance=data.corr().round(2)
 #print(Covariance.to_latex())
 # Basic summary statistics
 #print(data.mean())
+
+for c in data.columns:
+    plt.boxplot(data[c])
+    plt.show()
