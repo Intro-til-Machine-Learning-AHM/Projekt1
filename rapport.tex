@@ -8,21 +8,22 @@ The dataset was used as a way to predict if Indian women could develop diabetes 
 The examination had picked out a number of attributes which they found relevant to the examination.
 The data was picked out by: “Jack W. Smith, et al., 1988, Using the ADAP Learning Algorithm to Forecast the Onset of Diabetes Mellitus”
 and is taken from a bigger examination made by “National Institute of Diabetes and Digestive and Kidney Diseases.”
-The dataset contains 8 attributes, plus a class attribute which identifies whether or not the person was tested positive for diabetes, and the test was taken by 768 test subjects.
+The dataset contains 8 attributes, plus a class attribute which identifies whether or not the person was tested positive for diabetes,
+ and the test was taken by 768 test subjects.
 
 The dataset is composed by the following attributes:
 \begin{enumerate}
 \item Number of times pregnant
 \item Plasma glucose concentration a 2 hours in an oral glucose tolerance test, GTT
-\item Diastolic blood pressure mm Hg
-\item Triceps skin fold thickness mm
-\item 2-Hour serum insulin $\mu$ U / ml
-\item Body mass index Weight in kg / (Height in $m^2$)
+\item Diastolic blood pressure (mm Hg)
+\item Triceps skin fold thickness (mm)
+\item 2-Hour serum insulin ($\mu$ U / ml)
+\item Body mass index Weight in (kg / (Height in $m^2$))
 \item Diabetes pedigree function
-\item Age Years
+\item Age (Years)
 
 \item \emph{class attribute}:
-\item Class variable 0 or 1
+\item Class variable (0 or 1)
 \end{enumerate}
 
 
@@ -76,7 +77,7 @@ the above section and are discussed more in depth in the following.
 The number of times pregnant is a discrete ratio attribute and so is
 the age attribute. Both attributes are measured in a finite set of values.
 Plasma glucose concentration is a continuous ratio attribute
-and so is diastolic blood pressure, skin fold thickness, BMI and 2-hour serum
+and so is diastolic blood pressure, skin fold thickness, BMI and 2-hour serum and
 insulin. This means that only one of the eight input attributes is non-ratio.
 The diabetes pedigree function is a continous ordinal attribute, because these
 numbers tell whether one is more or less genetically expected to be diagnosed
@@ -109,10 +110,10 @@ data set went from 768 observations to 392.
 \bigskip
 
 Some summary statistics have been summarized in the tables below. This should
-give some insight to the values usually seen in the attributes. Mean, variance
+give some insight to the values usually seen in the attributes. Mean, variance, range
 and correalation have been presented for the attributes. Here, the huge differences
 in the variance of the attributes should be noted. Some are very high, some are
-almost non-existent.
+almost non-existent. These values can be seen in table 1 and 2.
 
 \begin{table}[]
 \centering
@@ -123,7 +124,6 @@ almost non-existent.
 \multicolumn{1}{|l|}{Attribute} & pregs & glucose & bp   & thickness & insulin & bmi  & dia\_pedig & age  \\ \cline{1-1}
 \multicolumn{1}{|l|}{Mean}      & 3.3   & 122.6   & 70.7 & 29.1      & 156.1   & 33.0 & 0.5        & 30.9 \\ \cline{1-1}
 \multicolumn{1}{|l|}{Variance}  & 10.3     & 950.0     & 155.8   & 110.3        & 14087.3    & 49.3 & 0.1       & 103.8 \\ \cline{1-1}
-\multicolumn{1}{|l|}{Range}  & 17     & 142     & 86   & 56        & 832    & 48.9 & 2.3       & 60 \\ \cline{1-1}
                                                        &       &         &      &           &         &      &            &      \\ \hline
 \end{tabular}
 \end{table}
@@ -148,28 +148,35 @@ class     &   0.26 &     0.52 &  0.19 &       0.26 &     0.30 &  0.27 &       0.
 
 \subsection{Data Visualization}
 
-We made a boxplot analysis, figure(???), and it showed clearly that attribute 5(insulin) had the most outliers
+!!3.1!!
+We made a boxplot analysis, figure(TODO ???), and it showed clearly that attribute 5(insulin) had the most outliers
 and had the greatest variance. Attribute 2(glucose) had the second greatest variance but had no outliers.
 All though the plots showed a lot of outliers for the attribute insulin, we did not remove them because we
 assume that the examination was performed and measured correctly.
-All of the attributes have the same y-axes. This detail is important because each attribute describes a
+All of the attributes' boxplots have the same y-axes. This detail is important because each attribute describes a
 biological factor, which vary greatly in value.
-For attribute 1(pregs) there is not a high variance. This could be because of the Indian women not having
+For example attribute 1(pregs) there is not a high variance. This could be because of the Indian women not having
 a great amount of children, which is normal.
 
-
+!!3.2!!
+Histograms are shown in figure(TO DO??). The attributes pregs, insulin, dia_pedig
+and age do not seem normal distributed. Bp seems to be normally distributed.
+The data's attributes seem to be either right- or left-skewed, for example insulin and pregs
+are both right-skewed. Bmi may seem to be normally distributed but has a
+heavy tail to the right.
+Overall the data seems quite non-normally distributed with a few exceptions as meantioned above.
 
 The PCA revealed that a lot of the variance in the data is described by the
 first principal component, the insulin. This principal component accounts for
 93% of the variance, and together with the second principal component, 97% of
 the variance in the data is explained. This means a lot of the variance can
-be described in a 2D-plot. A cumulative sum can be seen on figure (??) as a
+be described in a 2D-plot. A cumulative sum can be seen on figure (TODO ??) as a
 function of principal components, from principal component describing the most
 variance to the principal component describing the least variance. This is true
 when the data is not standardized. However, after standardization, the variance
 cannot be explained by one or two principle components, and therefore visualization
 in 2D or even 3D becomes hard without loss of information about the data. See figure
-(??) for an overview of the explained variance for each principal component.
+(TODO ??) for an overview of the explained variance for each principal component.
 
 When the data is not standardized, the principal component with the most
 responsibility for the variance in the dataset is, by far, insulin. Therefore,
@@ -178,21 +185,17 @@ principal direction is much dictated by the attribute glucose, which is the
 attribute with the second highest variance. In this way, the projected plot in
 2D can more or less (but, of course, not entirely) be thought of as
 projection of the data down to the plane in the insulin and glucose directions.
-Figure (??) shows in which direction the principal components point. The "spikes"
-in each graph show how the principal directions point mostly in the direction of
+Figure (TODO ??) shows in which direction the principal components point. The "spikes"
+in each graph show how the principal directions points mostly in the direction of
 insulin and glucose, respectively. After standardization, the principal
 directions align much less with any principal components, which does make sense
 considering how the variance had to be presented by more principal components
-after standardization. This is visualized in figure (??).
+after standardization. This is visualized in figure (TODO ??).
 
 Here, the data can be seen projected to the principal components.
 
-!!3.2!!
-Histograms are shown in figure(??). The attributes pregs, insulin, dia_pedig
-and age are clearly not normally distributed. 
-
 !!3.3!!
-The linear correlations of the non-standardized data are show in figure (??).
+The linear correlations of the non-standardized data are show in figure (TODO ??).
 The higest correlation constant by far is the pregs-age one, which suggests
 that observations with a high value in one of these entries will be more likely
 to also have a high value in the other, quite as anticipated. This translates to
@@ -248,7 +251,7 @@ Summarization of what we have learned
 - Different kinds af attributes
 - A better understanding of the dataset
 - A grasp of the size ratio between attributes
-- Correlation between data 
+- Correlation between data
 - PCA: which components are more important wrt. variance
 - Restrictions of PCA in general and with this dataset
 - A visualization of the data in a low dimensional space.
