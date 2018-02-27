@@ -231,13 +231,25 @@ The PCA revealed that a lot of the variance in the data is described by the
 first principal component, the insulin. This principal component accounts for
 93% of the total variance, and together with the second principal component, 97% of
 the variance in the data is explained. This means a lot of the variance can
-be described in a 2D-plot. A cumulative sum can be seen on figure (TODO ?? "cum.var.png") as a
+be described in a 2D-plot. A cumulative sum can be seen on Figure \ref{fig:cumvar} as a
 function of principal components, from principal component describing the most
 variance to the principal component describing the least variance. This is true
 when the data is not standardized. However, after standardization, the variance
 cannot be explained by one or two principle components, and therefore visualization
-in 2D or even 3D becomes hard without loss of information about the data. See figure
-(TODO ?? "exp\_var\_hist.png") for an overview of the explained variance for each principal component.
+in 2D or even 3D becomes hard without loss of information about the data. See
+Figure \ref{fig:exp_var_hist} for an overview of the explained variance for each principal component.
+
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{cum_var}
+  \caption{TODO caption}\label{fig:cumvar}
+\end{figure}
+
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{exp_var_hist}
+  \caption{TODO caption}\label{fig:exp_var_hist}
+\end{figure}
 
 When the data is not standardized, the principal component with the most
 responsibility for the variance in the dataset is, by far, insulin. Therefore,
@@ -246,17 +258,42 @@ principal direction is much dictated by the attribute glucose, which is the
 attribute with the second highest variance. In this way, the projected plot in
 2D can more or less (but, of course, not entirely) be thought of as
 projection of the data down to the plane in the insulin and glucose directions.
-Figure (TODO ?? "principal\_directions.png") shows in which direction the principal components point. The "spikes"
+Figure \ref{fig:principal_directions} shows in which direction the principal components point. The "spikes"
 in each graph show how the principal directions point mostly in the direction of
 insulin and glucose (indexed 1 and 4), respectively. After standardization, the principal
 directions align much less with any principal components, which does make sense
 considering how the variance had to be presented by more principal components
-after standardization. This is visualized in figure (TODO ?? "principal\_directions\_n.png").
+after standardization. This is visualized in Figure \ref{fig:principal_directions_n}.
 It is seen that now, the second principal direction points a bit more in the direction
 of age and pregs, which also had a somewhat high correlation.
 
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{principal_directions}
+  \caption{TODO caption}\label{fig:principal_directions}
+\end{figure}
+
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{principal_directions_n}
+  \caption{TODO caption}\label{fig:principal_directions_n}
+\end{figure}
+
 Here, the data can be seen projected to the principal components non-standardized
-(TODO ?? "PCA.png") and standardized (TODO ?? "PCA\_n.png")
+(see Figure \ref{fig:PCA})
+and standardized (see Figure \ref{fig:PCA_n})
+
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{PCA}
+  \caption{TODO caption}\label{fig:PCA}
+\end{figure}
+
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{PCA_n}
+  \caption{TODO caption}\label{fig:PCA_n}
+\end{figure}
 
 \section{Discussion}
 As we saw in the normalized PCA and the correlation matrix,
