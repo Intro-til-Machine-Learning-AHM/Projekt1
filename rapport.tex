@@ -1,6 +1,4 @@
-\section{Project 1}
-
-\subsection{1. A description of your data set.}
+\section{A desciption of the data set}
 
 The dataset is composed by an examination of Pima Indians in Phoenix, Arizona.
 They were chosen as subject due to their high risk of getting diabetes.
@@ -62,12 +60,8 @@ After taking into account the difference between healthy and diabetic patients,
 an anomaly detection might perhaps be of the most use in identifying
 potential data quality issues.
 
-\subsection{2. A detailed explanation of the attributes of the data.}
+\section{A detailed explanation of the attributes of the data.}
 
-\subsubsection{Underunderoverskrift 1}
-
-
-\subsection{Attributes of the data}
 This dataset contains 8 attributes which work as input. These attributes are defined in
 the above section and are discussed more in depth in the following.
 
@@ -142,7 +136,7 @@ class     &   0.26 &     0.52 &  0.19 &       0.26 &     0.30 &  0.27 &       0.
 \end{tabular}
 \end{table}
 
-\subsection{Data Visualization}
+\section{Data Visualization}
 
 \subsection{Visualizing the data}
 %!!3.1!!
@@ -232,13 +226,25 @@ The PCA revealed that a lot of the variance in the data is described by the
 first principal component, the insulin. This principal component accounts for
 93% of the total variance, and together with the second principal component, 97% of
 the variance in the data is explained. This means a lot of the variance can
-be described in a 2D-plot. A cumulative sum can be seen on figure (TODO ?? "cum.var.png") as a
+be described in a 2D-plot. A cumulative sum can be seen on Figure \ref{fig:cumvar} as a
 function of principal components, from principal component describing the most
 variance to the principal component describing the least variance. This is true
 when the data is not standardized. However, after standardization, the variance
 cannot be explained by one or two principle components, and therefore visualization
-in 2D or even 3D becomes hard without loss of information about the data. See figure
-(TODO ?? "exp_var_hist.png") for an overview of the explained variance for each principal component.
+in 2D or even 3D becomes hard without loss of information about the data. See
+Figure \ref{fig:exp_var_hist} for an overview of the explained variance for each principal component.
+
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{cum_var}
+  \caption{TODO caption}\label{fig:cumvar}
+\end{figure}
+
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{exp_var_hist}
+  \caption{TODO caption}\label{fig:exp_var_hist}
+\end{figure}
 
 When the data is not standardized, the principal component with the most
 responsibility for the variance in the dataset is, by far, insulin. Therefore,
@@ -247,38 +253,42 @@ principal direction is much dictated by the attribute glucose, which is the
 attribute with the second highest variance. In this way, the projected plot in
 2D can more or less (but, of course, not entirely) be thought of as
 projection of the data down to the plane in the insulin and glucose directions.
-Figure (TODO ?? "principal_directions.png") shows in which direction the principal components point. The "spikes"
+Figure \ref{fig:principal_directions} shows in which direction the principal components point. The "spikes"
 in each graph show how the principal directions point mostly in the direction of
 insulin and glucose (indexed 1 and 4), respectively. After standardization, the principal
 directions align much less with any principal components, which does make sense
 considering how the variance had to be presented by more principal components
-after standardization. This is visualized in figure (TODO ?? "principal_directions_n.png").
+after standardization. This is visualized in Figure \ref{fig:principal_directions_n}.
 It is seen that now, the second principal direction points a bit more in the direction
 of age and pregs, which also had a somewhat high correlation.
 
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{principal_directions}
+  \caption{TODO caption}\label{fig:principal_directions}
+\end{figure}
+
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{principal_directions_n}
+  \caption{TODO caption}\label{fig:principal_directions_n}
+\end{figure}
+
 Here, the data can be seen projected to the principal components non-standardized
-(TODO ?? "PCA.png") and standardized (TODO ?? "PCA_n.png")
+(see Figure \ref{fig:PCA})
+and standardized (see Figure \ref{fig:PCA_n})
 
-!!3.3!!
-The linear correlations of the non-standardized data are show in Table 2.
-The higest correlation constant by far is the pregs-age one, which suggests
-that observations with a high value in one of these entries will be more likely
-to also have a high value in the other, quite as anticipated. This translates to
-an apparent tendency for older women to have been pregnant more and for women
-who have been pregnant more often to be older.
-BMI and thickness seem to be correlated about as much as pregs and age. This
-correlation seems reasonable as well.
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{PCA}
+  \caption{TODO caption}\label{fig:PCA}
+\end{figure}
 
-!!3.4!!
-The primary modelling aim, to predict whether an Indian woman has diabetes or not
-based on 8 variables, appears to be feasible. However, given the nature of the
-data, PCA will most likely not give a complete picture between these variables
-and the occurrence of diabetes. It is very likely that the high variance of
-insulin will outshine everything else, at least with the non-standardized
-data. The PCA is designed this way, and it must be kept in mind that great
-variation might not equal great importance.
-The modelling of this data seems to be doable, but with what is known about the data
-so far, it is hard to tell how much insight this will lead to.
+\begin{figure}
+  \centering{}
+  \includegraphics[width=0.5\textwidth]{PCA_n}
+  \caption{TODO caption}\label{fig:PCA_n}
+\end{figure}
 
 \section{Discussion}
 As we saw in the normalized PCA and the correlation matrix,
@@ -320,27 +330,3 @@ Summarization of what we have learned
 - PCA: which components are more important wrt. variance
 - Restrictions of PCA in general and with this dataset
 - A visualization of the data in a low dimensional space.
-
-\section{Appendix}
-This report was written as follows:
-
-Section 1.1: Hildibjørg
-Section 1.2: Hildibjørg
-Section 1.3: Hildibjørg
-Section 1.4: Marcus
-
-Section 2.1: Andreas
-Section 2.2: Andreas
-Section 2.3: Andreas
-
-Section 3.1: Hildibjørg
-Section 3.2: Hildibjørg and Andreas
-Section 3.3: Andreas
-Section 3.4: Andreas
-Section 3.5: Andreas and Marcus
-Section 3.6: Andreas and Marcus
-Section 3.7: Andreas and Marcus
-
-Section 4.1: Marcus
-Section 4.2: Marcus
-Section 4.3: Marcus
