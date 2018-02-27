@@ -4,8 +4,8 @@ The dataset is composed by an examination of Pima Indians in Phoenix, Arizona.
 They were chosen as subject due to their high risk of getting diabetes.
 The dataset was used as a way to predict if Indian women could develop diabetes in the following 5 years.
 The examination had picked out a number of attributes which they found relevant to the examination.
-The data was picked out by: “Jack W. Smith, et al., 1988, Using the ADAP Learning Algorithm to Forecast the Onset of Diabetes Mellitus”
-and is taken from a bigger examination made by “National Institute of Diabetes and Digestive and Kidney Diseases.”
+The data was picked out by: ``Jack W. Smith, et al., 1988, Using the ADAP Learning Algorithm to Forecast the Onset of Diabetes Mellitus''
+and is taken from a bigger examination made by ``National Institute of Diabetes and Digestive and Kidney Diseases.''
 The dataset contains 8 attributes, plus a class attribute which identifies whether or not the person was tested positive for diabetes,
  and the test was taken by 768 test subjects.
 
@@ -19,14 +19,11 @@ The dataset is composed by the following attributes:
 \item Body mass index Weight in (kg / (Height in $m^2$))
 \item Diabetes pedigree function
 \item Age (Years)
-
-\item \emph{class attribute}:
 \item Class variable (0 or 1)
 \end{enumerate}
 
-
-The dataset was found on the website: (http://archive.ics.uci.edu/ml/datasets/Pima%20Indians%20Diabetes)
-In the folder "Data Folder".
+The dataset was found on the website in the footnote.
+\footnote{http://archive.ics.uci.edu/ml/datasets/Pima\%20Indians\%20Diabetes}
 
 The obvious variable to predict
 in any sort of supervised learning scenario
@@ -55,7 +52,7 @@ For example, older women will have a higher chance of having had more children,
 simply due to having had more time to have them,
 and with skin fold thickness and BMI both being measures of potential obesity,
 they might be expected to correlate.
-Due to the lack of discrete (TODO binary? set-membership, maybe?) variables,
+Due to the lack of set-membership variables,
 an association mining as such cannot be supported on this data,
 but some of the concepts might be generalizable to a continous case.
 
@@ -103,7 +100,7 @@ considerable amount of the original observations have been discarded, as the
 data set went from 768 observations to 392.
 \bigskip
 
-Some summary statistics have been summarized in the tables below in Table 1. This should
+Some summary statistics have been summarized in Table \ref{tab:stats}. This should
 give some insight to the values usually seen in the attributes. Mean, variance
 and correalation have been presented for the attributes. Here, the huge differences
 in the variance of the attributes should be noted. Some are very high, some are
@@ -111,8 +108,7 @@ almost non-existent.
 
 \begin{table}[]
 \centering
-\caption{Mean and median of attributes}
-\label{tab:stats}
+\caption{Mean and median of attributes}\label{tab:stats}
 \begin{tabular}{lllllllll}
 \cline{1-1}
 \multicolumn{1}{|l|}{Attribute} & pregs & glucose & bp   & thickness & insulin & bmi  & dia\_pedig & age  \\ \cline{1-1}
@@ -123,8 +119,7 @@ almost non-existent.
 \end{table}
 
 \begin{table}
-\caption{Correalation matrix}
-\label{tab:cor}
+\caption{Correalation matrix}\label{tab:cor}
 \begin{tabular}{lrrrrrrrrr}
 {} &  pregs &  glucose &    bp &  thickness &  insulin &   bmi &  dia\_pedig &   age &  class \\
 \midrule
@@ -144,7 +139,7 @@ class     &   0.26 &     0.52 &  0.19 &       0.26 &     0.30 &  0.27 &       0.
 \section{Data Visualization}
 
 \subsection{Visualizing the data}
-!!3.1!!
+%!!3.1!!
 We made a boxplot analysis, Figure \ref{fig:hists}, and it showed clearly that attribute 5(insulin) had the most outliers
 and had the greatest variance. Attribute 2(glucose) had the second greatest variance but had no outliers.
 All though the plots showed a lot of outliers for the attribute insulin, we did not remove them because we
@@ -197,7 +192,7 @@ a great amount of children, which is normal.
   \end{subfigure}
 \end{figure}
 
-!!3.2!!
+%!!3.2!!
 Histograms are shown in Figure \ref{fig:hists}. The attributes pregs, insulin, dia\_pedig
 and age do not seem normal distributed. Bp seems to be normally distributed.
 The data's attributes seem to be either right- or left-skewed, for example insulin and pregs
@@ -205,8 +200,8 @@ are both right-skewed. Bmi may seem to be normally distributed but has a
 heavy tails to the right.
 Overall the data seems quite non-normally distributed with a few exceptions as mentioned above.
 
-!!3.3!!
-The linear correlations of the non-standardized data are show in Table 2.
+%!!3.3!!
+The linear correlations of the non-standardized data are show in Table \ref{tab:cor}.
 The higest correlation constant by far is the pregs-age one, which suggests
 that observations with a high value in one of these entries will be more likely
 to also have a high value in the other, quite as anticipated. This translates to
@@ -215,7 +210,7 @@ who have been pregnant more often to be older.
 BMI and thickness seem to be correlated about as much as pregs and age. This
 correlation seems reasonable as well.
 
-!!3.4!!
+%!!3.4!!
 The primary modelling aim, to predict whether an Indian woman has diabetes or not
 based on 8 variables, appears to be feasible. However, given the nature of the
 data, PCA will most likely not give a complete picture between these variables
@@ -227,7 +222,6 @@ The modelling of this data seems to be doable, but with what is known about the 
 so far, it is hard to tell how much insight this will lead to.
 
 \subsection{Visualizing the data with PCA}
-
 The PCA revealed that a lot of the variance in the data is described by the
 first principal component, the insulin. This principal component accounts for
 93% of the total variance, and together with the second principal component, 97% of
