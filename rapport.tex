@@ -145,7 +145,7 @@ class     &   0.26 &     0.52 &  0.19 &       0.26 &     0.30 &  0.27 &       0.
 
 \subsection{Visualizing the data}
 !!3.1!!
-We made a boxplot analysis, figure(TODO ???), and it showed clearly that attribute 5(insulin) had the most outliers
+We made a boxplot analysis, Figure \ref{fig:hists}, and it showed clearly that attribute 5(insulin) had the most outliers
 and had the greatest variance. Attribute 2(glucose) had the second greatest variance but had no outliers.
 All though the plots showed a lot of outliers for the attribute insulin, we did not remove them because we
 assume that the examination was performed and measured correctly.
@@ -154,8 +154,51 @@ biological factor, which vary greatly in value.
 For example attribute 1(pregs) there is not a high variance. This could be because of the Indian women not having
 a great amount of children, which is normal.
 
+\begin{figure}
+  \centering{}
+  \caption{TODO caption}\label{fig:hists}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{pregs_hist}
+    \caption{TODO caption pregs}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{glucose_hist}
+    \caption{TODO caption glucose}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{bp_hist}
+    \caption{TODO caption bp}
+  \end{subfigure}
+
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{thickness_hist}
+    \caption{TODO caption thickness}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{insulin_hist}
+    \caption{TODO caption }
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{bmi_hist}
+    \caption{TODO caption bmi}
+  \end{subfigure}
+
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{dia_pedig_hist}
+    \caption{TODO caption dia\_pedig}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{age_hist}
+    \caption{TODO caption age}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{class_hist}
+    \caption{TODO caption class}
+  \end{subfigure}
+\end{figure}
+
 !!3.2!!
-Histograms are shown in figure(TODO?? "x.hist.png"). The attributes pregs, insulin, dia_pedig
+Histograms are shown in Figure \ref{fig:hists}. The attributes pregs, insulin, dia\_pedig
 and age do not seem normal distributed. Bp seems to be normally distributed.
 The data's attributes seem to be either right- or left-skewed, for example insulin and pregs
 are both right-skewed. Bmi may seem to be normally distributed but has a
@@ -195,7 +238,7 @@ variance to the principal component describing the least variance. This is true
 when the data is not standardized. However, after standardization, the variance
 cannot be explained by one or two principle components, and therefore visualization
 in 2D or even 3D becomes hard without loss of information about the data. See figure
-(TODO ?? "exp_var_hist.png") for an overview of the explained variance for each principal component.
+(TODO ?? "exp\_var\_hist.png") for an overview of the explained variance for each principal component.
 
 When the data is not standardized, the principal component with the most
 responsibility for the variance in the dataset is, by far, insulin. Therefore,
@@ -204,17 +247,17 @@ principal direction is much dictated by the attribute glucose, which is the
 attribute with the second highest variance. In this way, the projected plot in
 2D can more or less (but, of course, not entirely) be thought of as
 projection of the data down to the plane in the insulin and glucose directions.
-Figure (TODO ?? "principal_directions.png") shows in which direction the principal components point. The "spikes"
+Figure (TODO ?? "principal\_directions.png") shows in which direction the principal components point. The "spikes"
 in each graph show how the principal directions point mostly in the direction of
 insulin and glucose (indexed 1 and 4), respectively. After standardization, the principal
 directions align much less with any principal components, which does make sense
 considering how the variance had to be presented by more principal components
-after standardization. This is visualized in figure (TODO ?? "principal_directions_n.png").
+after standardization. This is visualized in figure (TODO ?? "principal\_directions\_n.png").
 It is seen that now, the second principal direction points a bit more in the direction
 of age and pregs, which also had a somewhat high correlation.
 
 Here, the data can be seen projected to the principal components non-standardized
-(TODO ?? "PCA.png") and standardized (TODO ?? "PCA_n.png")
+(TODO ?? "PCA.png") and standardized (TODO ?? "PCA\_n.png")
 
 \section{Discussion}
 As we saw in the normalized PCA and the correlation matrix,
