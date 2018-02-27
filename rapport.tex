@@ -1,6 +1,4 @@
-\section{Project 1}
-
-\subsection{1. A description of your data set.}
+\section{A desciption of the data set}
 
 The dataset is composed by an examination of Pima Indians in Phoenix, Arizona.
 They were chosen as subject due to their high risk of getting diabetes.
@@ -65,12 +63,8 @@ After taking into account the difference between healthy and diabetic patients,
 an anomaly detection might perhaps be of the most use in identifying
 potential data quality issues.
 
-\subsection{2. A detailed explanation of the attributes of the data.}
+\section{A detailed explanation of the attributes of the data.}
 
-\subsubsection{Underunderoverskrift 1}
-
-
-\subsection{Attributes of the data}
 This dataset contains 8 attributes which work as input. These attributes are defined in
 the above section and are discussed more in depth in the following.
 
@@ -146,8 +140,9 @@ class     &   0.26 &     0.52 &  0.19 &       0.26 &     0.30 &  0.27 &       0.
 \end{tabular}
 \end{table}
 
-\subsection{Data Visualization}
+\section{Data Visualization}
 
+\subsection{Visualizing the data}
 !!3.1!!
 We made a boxplot analysis, Figure \ref{fig:hists}, and it showed clearly that attribute 5(insulin) had the most outliers
 and had the greatest variance. Attribute 2(glucose) had the second greatest variance but had no outliers.
@@ -209,6 +204,29 @@ are both right-skewed. Bmi may seem to be normally distributed but has a
 heavy tails to the right.
 Overall the data seems quite non-normally distributed with a few exceptions as mentioned above.
 
+!!3.3!!
+The linear correlations of the non-standardized data are show in Table 2.
+The higest correlation constant by far is the pregs-age one, which suggests
+that observations with a high value in one of these entries will be more likely
+to also have a high value in the other, quite as anticipated. This translates to
+an apparent tendency for older women to have been pregnant more and for women
+who have been pregnant more often to be older.
+BMI and thickness seem to be correlated about as much as pregs and age. This
+correlation seems reasonable as well.
+
+!!3.4!!
+The primary modelling aim, to predict whether an Indian woman has diabetes or not
+based on 8 variables, appears to be feasible. However, given the nature of the
+data, PCA will most likely not give a complete picture between these variables
+and the occurrence of diabetes. It is very likely that the high variance of
+insulin will outshine everything else, at least with the non-standardized
+data. The PCA is designed this way, and it must be kept in mind that great
+variation might not equal great importance.
+The modelling of this data seems to be doable, but with what is known about the data
+so far, it is hard to tell how much insight this will lead to.
+
+\subsection{Visualizing the data with PCA}
+
 The PCA revealed that a lot of the variance in the data is described by the
 first principal component, the insulin. This principal component accounts for
 93% of the total variance, and together with the second principal component, 97% of
@@ -240,31 +258,10 @@ of age and pregs, which also had a somewhat high correlation.
 Here, the data can be seen projected to the principal components non-standardized
 (TODO ?? "PCA.png") and standardized (TODO ?? "PCA\_n.png")
 
-!!3.3!!
-The linear correlations of the non-standardized data are show in Table 2.
-The higest correlation constant by far is the pregs-age one, which suggests
-that observations with a high value in one of these entries will be more likely
-to also have a high value in the other, quite as anticipated. This translates to
-an apparent tendency for older women to have been pregnant more and for women
-who have been pregnant more often to be older.
-BMI and thickness seem to be correlated about as much as pregs and age. This
-correlation seems reasonable as well.
-
-!!3.4!!
-The primary modelling aim, to predict whether an Indian woman has diabetes or not
-based on 8 variables, appears to be feasible. However, given the nature of the
-data, PCA will most likely not give a complete picture between these variables
-and the occurrence of diabetes. It is very likely that the high variance of
-insulin will outshine everything else, at least with the non-standardized
-data. The PCA is designed this way, and it must be kept in mind that great
-variation might not equal great importance.
-The modelling of this data seems to be doable, but with what is known about the data
-so far, it is hard to tell how much insight this will lead to.
-
 \section{Discussion}
 As we saw in the normalized PCA and the correlation matrix,
 there is little in the way of clear
-linear relationships that account for 
+linear relationships that account for
 large amounts of the variance of the dataset.
 The un-normalized PCA was dominated by a few high-variance attributes.
 This indicates that we might rather want to perform a factor analysis,
