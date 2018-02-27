@@ -52,6 +52,7 @@ range_data = data.max()-data.min()
 #fig = plt.figure()
 #plt.hist(data_copy["pregs"],bins=fig = plt.figure())
 
+# Histograms
 for c in data.columns:
     ax = plt.figure()
     plt.title(c)
