@@ -62,6 +62,6 @@ for c in data.columns:
     lnspc = np.linspace(xmin, xmax, len(data[c]))
     pdf_g = stats.norm.pdf(lnspc, mu, sigma)
     plt.plot(lnspc, pdf_g, label="Norm")
-plt.show()
+lt.show()
 
 plt.show()
