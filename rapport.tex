@@ -68,7 +68,7 @@ potential data quality issues.
 
 \subsection{Attributes of the data}
 This dataset contains 8 attributes which work as input. These attributes are defined in
-the above section and is discusses more in depth in the following.
+the above section and are discussed more in depth in the following.
 
 The number of times pregnant is a discrete ratio attribute and so is
 the age attribute. Both attributes are measured in a finite set of values.
@@ -77,7 +77,11 @@ and so is diastolic blood pressure, skin fold thickness, BMI and 2-hour serum
 insulin. This means that only one of the eight input attributes is non-ratio.
 The diabetes pedigree function is a continous ordinal attribute, because these
 numbers tell whether one is more or less genetically expected to be diagnosed
-with diabetes.
+with diabetes. Here, a value of 0 does not clearly mean an absence of the attribute.
+Some of the attributes are continous by nature but appear as integers in the dataset.
+For this reason, they have been classified as continous here despite having been written
+down as integers in the dataset. This applies for the attributes bmi, insulin,
+thickness, bp and glucose.
 \bigskip
 
 \begin{description}
@@ -123,7 +127,6 @@ almost non-existent.
 \begin{table}
 \caption{Correalation matrix}
 \begin{tabular}{lrrrrrrrrr}
-\toprule
 {} &  pregs &  glucose &    bp &  thickness &  insulin &   bmi &  dia\_pedig &   age &  class \\
 \midrule
 pregs     &   1.00 &     0.20 &  0.21 &       0.09 &     0.08 & -0.03 &       0.01 &  0.68 &   0.26 \\
@@ -164,19 +167,19 @@ cannot be explained by one or two principle components, and therefore visualizat
 in 2D or even 3D becomes hard without loss of information about the data. See figure
 (??) for an overview of the explained variance for each principal component.
 
-When the data is not standardized, the principal component
-with the most responsibility for the variance in the dataset is insulin. Therefore,
+When the data is not standardized, the principal component with the most
+responsibility for the variance in the dataset is, by far, insulin. Therefore,
 this is more or less the first principal direction in which we plot our data. The second
 principal direction is much dictated by the attribute glucose, which is the
 attribute with the second highest variance. In this way, the projected plot in
-2D can more or less be thought of as projection of the data down to the plane
-in the insulin and glucose directions. Figure (??) shows in which direction
-the principal components point. The "spikes" in each graph show how the principal
-directions point mostly in the direction of insulin and glucose, respectively.
-After standardization, the principal directions align much less with any principal
-components, which does make sense considering how the variance had to be presented
-by more principal components after standardization. This is visualized in figure
-(??).
+2D can more or less (but, of course, not entirely) be thought of as
+projection of the data down to the plane in the insulin and glucose directions.
+Figure (??) shows in which direction the principal components point. The "spikes"
+in each graph show how the principal directions point mostly in the direction of
+insulin and glucose, respectively. After standardization, the principal
+directions align much less with any principal components, which does make sense
+considering how the variance had to be presented by more principal components
+after standardization. This is visualized in figure (??).
 
 Here, the data can be seen projected to the principal components.
 
@@ -184,13 +187,19 @@ Here, the data can be seen projected to the principal components.
 The linear correlations of the non-standardized data are show in figure (??).
 The higest correlation constant by far is the pregs-age one, which suggests
 that observations with a high value in one of these entries will be more likely
-to also have a high value in the other. This translates to an apparent tendency
-for older women to have been pregnant more and for women who have been pregnant
-more often to be older. (Eventually see figure(??))
+to also have a high value in the other, quite as anticipated. This translates to
+an apparent tendency for older women to have been pregnant more and for women
+who have been pregnant more often to be older. (Eventually see figure(??))
+BMI and thickness seem to be correlated about as much as pregs and age. This
+correlation seems reasonable as well.
 
 !!3.4!!
-The primary modelling aim, to predict whether an Indian woman had diabetes or not
+The primary modelling aim, to predict whether an Indian woman has diabetes or not
 based on 8 variables, appears to be feasible. However, given the nature of the
 data, PCA will most likely not give a complete picture between these variables
-and the occurrence of diabetes. After inspecting the boxplots above, it is
-very likely that insulin will dominate.
+and the occurrence of diabetes. It is very likely that the high variance of
+insulin will outshine everything else, at least with the non-standardized
+data. The PCA is designed this way, and it must be kept in mind that great
+variation might not equal great importance.
+The modelling of this data seems to be doable, but with what is known about the data
+so far, it is hard to tell how much insight this will lead to.
