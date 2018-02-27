@@ -49,19 +49,19 @@ del data_copy["class"]
 #plt.boxplot(data_copy.as_matrix())
 range_data = data.max()-data.min()
 #print(range_data)
-fig = plt.figure()
+#fig = plt.figure()
 #plt.hist(data_copy["pregs"],bins=fig = plt.figure())
 
 for c in data.columns:
-    ax = fig.add_subplot(421)
-    ax.set_title(c)
-    plt.hist(data[c],bins=17, normed=True)
+    ax = plt.figure()
+    plt.title(c)
+    plt.hist(data[c], normed=True)
     (mu,sigma) = norm.fit(data[c])
     xt = plt.xticks()[0]
     xmin, xmax = min(xt), max(xt)
     lnspc = np.linspace(xmin, xmax, len(data[c]))
     pdf_g = stats.norm.pdf(lnspc, mu, sigma)
     plt.plot(lnspc, pdf_g, label="Norm")
-    plt.show()
+plt.show()
 
 plt.show()
