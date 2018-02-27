@@ -149,7 +149,7 @@ class     &   0.26 &     0.52 &  0.19 &       0.26 &     0.30 &  0.27 &       0.
 \subsection{Data Visualization}
 
 !!3.1!!
-We made a boxplot analysis, figure(TODO ???), and it showed clearly that attribute 5(insulin) had the most outliers
+We made a boxplot analysis, Figure \ref{fig:hists}, and it showed clearly that attribute 5(insulin) had the most outliers
 and had the greatest variance. Attribute 2(glucose) had the second greatest variance but had no outliers.
 All though the plots showed a lot of outliers for the attribute insulin, we did not remove them because we
 assume that the examination was performed and measured correctly.
@@ -157,6 +157,49 @@ All of the attributes' boxplots have the same y-axes. This detail is important b
 biological factor, which vary greatly in value.
 For example attribute 1(pregs) there is not a high variance. This could be because of the Indian women not having
 a great amount of children, which is normal.
+
+\begin{figure}
+  \centering{}
+  \caption{TODO caption}\label{fig:hists}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{pregs_hist}
+    \caption{TODO caption pregs}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{glucose_hist}
+    \caption{TODO caption glucose}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{bp_hist}
+    \caption{TODO caption bp}
+  \end{subfigure}
+
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{thickness_hist}
+    \caption{TODO caption thickness}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{insulin_hist}
+    \caption{TODO caption }
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{bmi_hist}
+    \caption{TODO caption bmi}
+  \end{subfigure}
+
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{dia_pedig_hist}
+    \caption{TODO caption dia\_pedig}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{age_hist}
+    \caption{TODO caption age}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics[width=\textwidth]{class_hist}
+    \caption{TODO caption class}
+  \end{subfigure}
+\end{figure}
 
 !!3.2!!
 Histograms are shown in figure(TODO?? "x.hist.png"). The attributes pregs, insulin, dia\_pedig
