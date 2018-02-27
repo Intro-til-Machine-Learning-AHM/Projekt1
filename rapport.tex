@@ -51,9 +51,12 @@ which would cause missing values for certain patients.
 As for the unsupervised case,
 the data might reasonably be expected to have certain correlations
 and groupings
-(for example, older women will have a higher chance of having had more children)
 which might be exploited
 in order to identify different clusters.
+For example, older women will have a higher chance of having had more children,
+simply due to having had more time to have them,
+and with skin fold thickness and BMI both being measures of potential obesity,
+they might be expected to correlate.
 Due to the lack of discrete (TODO binary? set-membership, maybe?) variables,
 an association mining as such cannot be supported on this data,
 but some of the concepts might be generalizable to a continous case.
@@ -156,24 +159,24 @@ For example attribute 1(pregs) there is not a high variance. This could be becau
 a great amount of children, which is normal.
 
 !!3.2!!
-Histograms are shown in figure(TO DO??). The attributes pregs, insulin, dia_pedig
+Histograms are shown in figure(TO DO?? "x.hist.png"). The attributes pregs, insulin, dia_pedig
 and age do not seem normal distributed. Bp seems to be normally distributed.
 The data's attributes seem to be either right- or left-skewed, for example insulin and pregs
 are both right-skewed. Bmi may seem to be normally distributed but has a
-heavy tail to the right.
-Overall the data seems quite non-normally distributed with a few exceptions as meantioned above.
+heavy tails to the right.
+Overall the data seems quite non-normally distributed with a few exceptions as mentioned above.
 
 The PCA revealed that a lot of the variance in the data is described by the
 first principal component, the insulin. This principal component accounts for
-93% of the variance, and together with the second principal component, 97% of
+93% of the total variance, and together with the second principal component, 97% of
 the variance in the data is explained. This means a lot of the variance can
-be described in a 2D-plot. A cumulative sum can be seen on figure (TODO ??) as a
+be described in a 2D-plot. A cumulative sum can be seen on figure (TODO ?? "cum.var.png") as a
 function of principal components, from principal component describing the most
 variance to the principal component describing the least variance. This is true
 when the data is not standardized. However, after standardization, the variance
 cannot be explained by one or two principle components, and therefore visualization
 in 2D or even 3D becomes hard without loss of information about the data. See figure
-(TODO ??) for an overview of the explained variance for each principal component.
+(TODO ?? "exp_var_hist.png") for an overview of the explained variance for each principal component.
 
 When the data is not standardized, the principal component with the most
 responsibility for the variance in the dataset is, by far, insulin. Therefore,
@@ -182,22 +185,29 @@ principal direction is much dictated by the attribute glucose, which is the
 attribute with the second highest variance. In this way, the projected plot in
 2D can more or less (but, of course, not entirely) be thought of as
 projection of the data down to the plane in the insulin and glucose directions.
-Figure (TODO ??) shows in which direction the principal components point. The "spikes"
-in each graph show how the principal directions points mostly in the direction of
-insulin and glucose, respectively. After standardization, the principal
+Figure (TODO ?? "principal_directions.png") shows in which direction the principal components point. The "spikes"
+in each graph show how the principal directions point mostly in the direction of
+insulin and glucose (indexed 1 and 4), respectively. After standardization, the principal
 directions align much less with any principal components, which does make sense
 considering how the variance had to be presented by more principal components
-after standardization. This is visualized in figure (TODO ??).
+after standardization. This is visualized in figure (TODO ?? "principal_directions_n.png").
+It is seen that now, the second principal direction points a bit more in the direction
+of age and pregs, which also had a somewhat high correlation.
 
-Here, the data can be seen projected to the principal components.
+Here, the data can be seen projected to the principal components non-standardized
+(TODO ?? "PCA.png") and standardized (TODO ?? "PCA_n.png")
 
 !!3.3!!
-The linear correlations of the non-standardized data are show in figure (TODO ??).
+The linear correlations of the non-standardized data are show in Table 2.
 The higest correlation constant by far is the pregs-age one, which suggests
 that observations with a high value in one of these entries will be more likely
 to also have a high value in the other, quite as anticipated. This translates to
 an apparent tendency for older women to have been pregnant more and for women
+<<<<<<< HEAD
 who have been pregnant more often to be older. (Eventually see figure(TODO ??))
+=======
+who have been pregnant more often to be older.
+>>>>>>> b35840def9a8e80fcc8d46c310ccd44abe8d7ee1
 BMI and thickness seem to be correlated about as much as pregs and age. This
 correlation seems reasonable as well.
 
@@ -212,7 +222,38 @@ variation might not equal great importance.
 The modelling of this data seems to be doable, but with what is known about the data
 so far, it is hard to tell how much insight this will lead to.
 
-!!4!!
+\section{Discussion}
+As we saw in the normalized PCA and the correlation matrix,
+there is little in the way of clear
+linear relationships that account for 
+large amounts of the variance of the dataset.
+The un-normalized PCA was dominated by a few high-variance attributes.
+This indicates that we might rather want to perform a factor analysis,
+as that method focuses on explaining the covariances between factors rather
+than the overall variance of dthe dataset.
+
+Another challenge,
+especially for PCA,
+is that the attributes are of wildly varying scales
+with a range of 832 for insulin compared to merely 2.3
+for the diabetes pedigree function.
+
+The projections of the data into lower-dimensional spaces
+initially seems to have a discouraging lack of the sort structure
+one might expect would make unsupervised learning techniques like clustering useful.
+However, including the class variable reveals structure in the data
+that indicate it might still be amenable to
+the supervised learning of a predictor.
+
+We saw a number of correlations in the data,
+including, as expected,
+between age and number of times pregnant,
+and bmi and skin thickness,
+but also between blood glucose levels and insulin after a glucose tolerance test,
+and generally between a cluster of attributes corresponding to
+the (stereo)typical diabetes type 2 patient.
+
+
 Summarization of what we have learned
 - Different kinds af attributes
 - A better understanding of the dataset
